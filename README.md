@@ -1,2 +1,2 @@
-# com.toorah-games.variableobjects
+# Scriptable Variable Objects
  
