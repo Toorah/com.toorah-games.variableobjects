@@ -1,0 +1,12 @@
+using System.Collections;
+using System.Collections.Generic;
+using UnityEngine;
+
+namespace Toorah.ScriptableVariables
+{
+    [CreateAssetMenu(fileName = "*NAME* Variable", menuName = "Scriptable Variables/Single/*NAME*")]
+    public class *NAME*Variable : ScriptableVariable<*TYPE*>
+    {
+
+    }
+}

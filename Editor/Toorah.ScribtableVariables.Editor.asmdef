@@ -1,0 +1,18 @@
+{
+    "name": "Toorah.ScribtableVariables.Editor",
+    "rootNamespace": "Toorah.ScribtableVariables.Editor",
+    "references": [
+        "GUID:3b693b162193a7c42a5256d65210bcd2"
+    ],
+    "includePlatforms": [
+        "Editor"
+    ],
+    "excludePlatforms": [],
+    "allowUnsafeCode": false,
+    "overrideReferences": false,
+    "precompiledReferences": [],
+    "autoReferenced": true,
+    "defineConstraints": [],
+    "versionDefines": [],
+    "noEngineReferences": false
+}

@@ -1,0 +1,12 @@
+{
+    "name": "com.toorah-games.variableobjects",
+    "version": "1.0.0",
+    "displayName": "Scriptable Object Variables",
+    "description": "",
+    "unity": "2020.2",
+    "author": {
+        "name": "Atahan Tugra Kiltan",
+        "email": "",
+        "url": ""
+    }
+}
