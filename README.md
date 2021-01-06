@@ -12,13 +12,13 @@ It can be accessed via:
 - The **Path** is where generated classes will be saved. Use the **Browse** button to select a folder within **Assets/**
 - **Generate** will create 2 scripts in **Path**. One for the **Type** entered, and a specific **List\<T>** type
 
-At the bottom are 2 preview windows, to check the script file contents before they are generated.
+At the bottom of the Editor Window are 2 preview windows, to check the script file contents before they are generated.
 
 ## Examples
-> Scriptable Objects in **Assets/**
+> Scriptable Objects in **Assets/**</br>
 <img src="Documentation~/Screenshots/objects.png" width="300"><br>
 
-> Inspectors for different Scriptable Object Variables
+> Inspectors for different Scriptable Object Variables</br>
 <img src="Documentation~/Screenshots/float-var.png" width="300"><br>
 <img src="Documentation~/Screenshots/gradient-var.png" width="300"><br>
 <img src="Documentation~/Screenshots/go-list-var.png" width="300"><br>
