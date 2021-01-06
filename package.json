@@ -1,6 +1,6 @@
 {
     "name": "com.toorah-games.variableobjects",
-    "version": "1.0.0",
+    "version": "1.0.1",
     "displayName": "Scriptable Object Variables",
     "description": "A Framework for ScriptableObject based Variables.",
     "unity": "2020.2",
