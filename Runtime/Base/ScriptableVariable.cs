@@ -8,7 +8,14 @@ namespace Toorah.ScriptableVariables
     public abstract class ScriptableVariable<T> : BaseVariable
     {
         [SerializeField]
+        private T m_default;
+        [SerializeField]
         private T m_value;
+
+        private void OnEnable()
+        {
+            m_value = m_default;
+        }
 
         public VariableEvent OnValueChanged = new VariableEvent();
 
@@ -26,6 +33,11 @@ namespace Toorah.ScriptableVariables
                     OnValueChanged.Invoke(m_value);
                 }
             }
+        }
+
+        public void SetWithoutNotify(T value)
+        {
+            m_value = value;
         }
     }
 }
