@@ -16,11 +16,13 @@ namespace Toorah.ScribtableVariables.Editor
             win.Show();
         }
 
-
+        public bool saveVariable = true;
         public TextAsset variableTemplate;
         public string variableTemplateText;
+        public bool saveList = true;
         public TextAsset listTemplate;
         public string listTemplateText;
+
 
         public string m_name;
         public string m_type;
@@ -32,8 +34,10 @@ namespace Toorah.ScribtableVariables.Editor
             variableTemplate = Resources.Load<TextAsset>("variabletemplate");
             listTemplate = Resources.Load<TextAsset>("listTemplate");
 
+
             variableTemplateText = variableTemplate.text;
             listTemplateText = listTemplate.text;
+
         }
 
         private void OnGUI()
@@ -69,18 +73,27 @@ namespace Toorah.ScribtableVariables.Editor
 
             var variableText = variableTemplateText.Replace("*NAME*", m_name).Replace("*TYPE*", m_type);
             var listText = listTemplateText.Replace("*NAME*", m_name).Replace("*TYPE*", m_type);
+          
 
             if (GUILayout.Button("Generate"))
             {
-                File.WriteAllText(Path.Combine(m_directory, m_name + "Variable.cs"), variableText);
-                File.WriteAllText(Path.Combine(m_directory, m_name + "ListVariable.cs"), listText);
+                if(saveVariable)
+                    File.WriteAllText(Path.Combine(m_directory, m_name + "Variable.cs"), variableText);
+                if(saveList)
+                    File.WriteAllText(Path.Combine(m_directory, m_name + "ListVariable.cs"), listText);
+                
                 AssetDatabase.SaveAssets();
                 AssetDatabase.Refresh();
             }
 
             GUILayout.Label("Preview", EditorStyles.miniLabel);
-            GUILayout.Label(variableText, EditorStyles.helpBox);
-            GUILayout.Label(listText, EditorStyles.helpBox);
+            saveVariable = EditorGUILayout.Toggle("Save Variable", saveVariable);
+            if(saveVariable)
+                GUILayout.Label(variableText, EditorStyles.helpBox);
+            saveList = EditorGUILayout.Toggle("Save List", saveList);
+            if (saveList)
+                GUILayout.Label(listText, EditorStyles.helpBox);
+            
         }
     }
 
