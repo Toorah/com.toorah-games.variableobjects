@@ -35,6 +35,11 @@ namespace Toorah.ScriptableVariables
             }
         }
 
+        public void SetValue(T value)
+        {
+            Value = value;
+        }
+
         public void SetWithoutNotify(T value)
         {
             m_value = value;
