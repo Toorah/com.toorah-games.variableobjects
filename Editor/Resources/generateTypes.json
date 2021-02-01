@@ -91,6 +91,10 @@
         {
             "name": "Light",
             "type": ""
+        },
+        {
+            "name": "Quaternion",
+            "type": ""
         }
     ]
 }
