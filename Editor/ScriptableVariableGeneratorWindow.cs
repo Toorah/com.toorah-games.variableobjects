@@ -1,5 +1,6 @@
 using System.Collections.Generic;
 using System.IO;
+using System.Linq;
 using UnityEditor;
 using UnityEngine;
 
@@ -103,6 +104,12 @@ namespace Toorah.ScribtableVariables.Editor
                 AssetDatabase.Refresh();
             }
         }
+        void Order()
+        {
+            generator.types = generator.types.OrderBy(t => !string.IsNullOrEmpty(t.type) ? -100 : 100).ThenBy(t => t.name).ToList();
+            MarkChange();
+            Repaint();
+        }
         void MarkChange()
         {
             if (!titleContent.text.EndsWith("*"))
@@ -126,6 +133,7 @@ namespace Toorah.ScribtableVariables.Editor
                 {
                     GenericMenu menu = new GenericMenu();
                     menu.AddItem(new GUIContent("Default"), false, () => { LoadDefault(); });
+                    menu.AddSeparator("");
                     menu.AddItem(new GUIContent("Load"), false, () => 
                     {
                         var path = EditorUtility.OpenFilePanelWithFilters("Open JSON", "", new string[] { "Text Files", "txt,json" });
@@ -134,6 +142,8 @@ namespace Toorah.ScribtableVariables.Editor
                     });
                     menu.AddItem(new GUIContent("Save"), false, () => { Save(); });
                     menu.AddItem(new GUIContent("Save As..."), false, () => { Save(true); });
+                    menu.AddSeparator("");
+                    menu.AddItem(new GUIContent("Order"), false, () => { Order(); });
                     menu.ShowAsContext();
                 }
             }
@@ -143,6 +153,7 @@ namespace Toorah.ScribtableVariables.Editor
                 {
                     using (new GUILayout.HorizontalScope())
                     {
+                        EditorGUILayout.LabelField("", EditorStyles.toolbarButton, GUILayout.Width(20));
                         EditorGUILayout.LabelField("Name", EditorStyles.toolbarButton);
                         EditorGUILayout.LabelField("Type", EditorStyles.toolbarButton);
                         EditorGUILayout.LabelField("", EditorStyles.toolbarButton, GUILayout.Width(20));
@@ -160,19 +171,15 @@ namespace Toorah.ScribtableVariables.Editor
 
                                 using (new GUILayout.HorizontalScope())
                                 {
-                                    Rect rect = GUILayoutUtility.GetRect(new GUIContent(""), EditorStyles.textField);
-
-                                    if (rect.Contains(Event.current.mousePosition))
+                                    if (GUILayout.Button(new GUIContent(">", "Preview"), GUILayout.Width(20)))
                                     {
                                         m_name = cur.name;
-                                        m_type = string.IsNullOrEmpty(cur.type) ? m_name : cur.type;
-                                        GUI.Box(new RectOffset(2, 1, 1, 1).Add(rect), "", EditorStyles.helpBox);
+                                        m_type = string.IsNullOrEmpty(cur.type) ? m_name : cur.type; 
                                     }
-                                    rect.width *= 0.5f;
-                                    rect.width -= 1;
-                                    cur.name = EditorGUI.DelayedTextField(rect, cur.name);
-                                    rect.x += rect.width+1;
-                                    cur.type = EditorGUI.DelayedTextField(rect,cur.type);
+
+                                    cur.name = EditorGUILayout.DelayedTextField(cur.name);
+
+                                    cur.type = EditorGUILayout.DelayedTextField(cur.type);
                                     if (GUILayout.Button("-", GUILayout.Width(20)))
                                     {
                                         if (!titleContent.text.EndsWith("*"))
@@ -243,22 +250,24 @@ namespace Toorah.ScribtableVariables.Editor
                         AssetDatabase.SaveAssets();
                         AssetDatabase.Refresh();
                     }
+                    m_type = string.IsNullOrEmpty(m_type) ? m_name : m_type;
 
                     variableText = variableTemplateText.Replace("*NAME*", m_name).Replace("*TYPE*", m_type);
                     listText = listTemplateText.Replace("*NAME*", m_name).Replace("*TYPE*", m_type);
 
+                    GUIStyle label = new GUIStyle(EditorStyles.helpBox);
+                    label.richText = true;
 
                     GUILayout.Label("Preview", EditorStyles.miniLabel);
                     saveVariable = EditorGUILayout.Toggle("Save Variable", saveVariable);
                     if (saveVariable)
-                        GUILayout.Label(variableText, EditorStyles.helpBox);
+                        GUILayout.Label(variableText, label);
                     saveList = EditorGUILayout.Toggle("Save List", saveList);
                     if (saveList)
-                        GUILayout.Label(listText, EditorStyles.helpBox);
+                        GUILayout.Label(listText, label);
 
                 }
             }
         }
     }
-
 }

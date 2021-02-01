@@ -1,16 +1,13 @@
-using System.Collections;
-using System.Collections.Generic;
-using UnityEngine;
+<color=#3498eb>using</color> System.Collections;
+<color=#3498eb>using</color> System.Collections.Generic;
+<color=#3498eb>using</color> UnityEngine;
 
-namespace Toorah.ScriptableVariables
+<color=#3498eb>namespace</color> Toorah.ScriptableVariables
 {
-    [CreateAssetMenu(fileName = "*NAME* List Variable", menuName = "Scriptable Variables/List/*NAME*")]
-    public class *NAME*ListVariable : ListVariable<*TYPE*>
-    {
+    [<color=#37a67d>CreateAssetMenu</color>(fileName = <color=#c45739>"*NAME* List Variable"</color>, menuName = <color=#c45739>"Scriptable Variables/List/*NAME*"</color>)]
+    <color=#3498eb>public class</color> <color=#37a67d>*NAME*ListVariable</color> : <color=#37a67d>ListVariable</color><<color=#3498eb>*TYPE*</color>> { }
 
-    }
-
-    [System.Serializable]
-    public class *NAME*ListReference : VariableReference<List<*TYPE*>, *NAME*ListVariable> { }
+    [System.<color=#37a67d>Serializable</color>]
+    <color=#3498eb>public class</color> <color=#37a67d>*NAME*ListReference</color> : <color=#37a67d>VariableReference</color><<color=#37a67d>List</color><<color=#3498eb>*TYPE*</color>>, <color=#37a67d>*NAME*ListVariable</color>> { }
     
 }

@@ -1,83 +1,27 @@
 {
     "types": [
         {
-            "name": "String",
-            "type": "string"
-        },
-        {
             "name": "Bool",
             "type": "bool"
         },
         {
-            "name": "Int",
-            "type": "int"
+            "name": "Double",
+            "type": "double"
         },
         {
             "name": "Float",
             "type": "float"
         },
         {
-            "name": "Gradient",
-            "type": ""
+            "name": "Int",
+            "type": "int"
         },
         {
-            "name": "GameObject",
-            "type": ""
-        },
-        {
-            "name": "Vector2",
-            "type": ""
-        },
-        {
-            "name": "Vector3",
-            "type": ""
-        },
-        {
-            "name": "Vector4",
-            "type": ""
-        },
-        {
-            "name": "Color",
-            "type": ""
-        },
-        {
-            "name": "Texture",
-            "type": ""
-        },
-        {
-            "name": "ScriptableObject",
-            "type": ""
-        },
-        {
-            "name": "Rect",
-            "type": ""
-        },
-        {
-            "name": "Material",
-            "type": ""
-        },
-        {
-            "name": "Shader",
-            "type": ""
-        },
-        {
-            "name": "Mesh",
-            "type": ""
+            "name": "String",
+            "type": "string"
         },
         {
             "name": "AnimationCurve",
-            "type": ""
-        },
-        {
-            "name": "RenderTexture",
-            "type": ""
-        },
-        {
-            "name": "Texture2D",
-            "type": ""
-        },
-        {
-            "name": "TextAsset",
             "type": ""
         },
         {
@@ -85,7 +29,15 @@
             "type": ""
         },
         {
-            "name": "Rigidbody",
+            "name": "Color",
+            "type": ""
+        },
+        {
+            "name": "GameObject",
+            "type": ""
+        },
+        {
+            "name": "Gradient",
             "type": ""
         },
         {
@@ -93,7 +45,75 @@
             "type": ""
         },
         {
+            "name": "Material",
+            "type": ""
+        },
+        {
+            "name": "Mesh",
+            "type": ""
+        },
+        {
             "name": "Quaternion",
+            "type": ""
+        },
+        {
+            "name": "Rect",
+            "type": ""
+        },
+        {
+            "name": "RenderTexture",
+            "type": ""
+        },
+        {
+            "name": "Rigidbody",
+            "type": ""
+        },
+        {
+            "name": "ScriptableObject",
+            "type": ""
+        },
+        {
+            "name": "Shader",
+            "type": ""
+        },
+        {
+            "name": "Sprite",
+            "type": ""
+        },
+        {
+            "name": "TextAsset",
+            "type": ""
+        },
+        {
+            "name": "Texture",
+            "type": ""
+        },
+        {
+            "name": "Texture2D",
+            "type": ""
+        },
+        {
+            "name": "Vector2",
+            "type": ""
+        },
+        {
+            "name": "Vector2Int",
+            "type": ""
+        },
+        {
+            "name": "Vector3",
+            "type": ""
+        },
+        {
+            "name": "Vector3Int",
+            "type": ""
+        },
+        {
+            "name": "Vector4",
+            "type": ""
+        },
+        {
+            "name": "Vector4Int",
             "type": ""
         }
     ]
