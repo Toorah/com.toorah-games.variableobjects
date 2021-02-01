@@ -1,0 +1,96 @@
+{
+    "types": [
+        {
+            "name": "String",
+            "type": "string"
+        },
+        {
+            "name": "Bool",
+            "type": "bool"
+        },
+        {
+            "name": "Int",
+            "type": "int"
+        },
+        {
+            "name": "Float",
+            "type": "float"
+        },
+        {
+            "name": "Gradient",
+            "type": ""
+        },
+        {
+            "name": "GameObject",
+            "type": ""
+        },
+        {
+            "name": "Vector2",
+            "type": ""
+        },
+        {
+            "name": "Vector3",
+            "type": ""
+        },
+        {
+            "name": "Vector4",
+            "type": ""
+        },
+        {
+            "name": "Color",
+            "type": ""
+        },
+        {
+            "name": "Texture",
+            "type": ""
+        },
+        {
+            "name": "ScriptableObject",
+            "type": ""
+        },
+        {
+            "name": "Rect",
+            "type": ""
+        },
+        {
+            "name": "Material",
+            "type": ""
+        },
+        {
+            "name": "Shader",
+            "type": ""
+        },
+        {
+            "name": "Mesh",
+            "type": ""
+        },
+        {
+            "name": "AnimationCurve",
+            "type": ""
+        },
+        {
+            "name": "RenderTexture",
+            "type": ""
+        },
+        {
+            "name": "Texture2D",
+            "type": ""
+        },
+        {
+            "name": "TextAsset",
+            "type": ""
+        },
+        {
+            "name": "Camera",
+            "type": ""
+        },
+        {
+            "name": "Rigidbody",
+            "type": ""
+        },
+        {
+            "name": "Light",
+            "type": ""
+        }
+    ]
+}
