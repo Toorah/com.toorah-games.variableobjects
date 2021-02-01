@@ -11,13 +11,14 @@ It can be accessed via:
 
 <img src="Documentation~/Screenshots/generator.png" width="900">
  
-- To create new *classes* enter a **Name** for the *class* and the **Type**.
-- The **Name** will be used for the class and file name, whereas the **Type** is the actual *C# type*.
-- The toggle next to **Type**** causes the **Name** to be used as the **Type** in lowecase; eg. Float -> float. Disabling the toggle allows to enter a custom type.
+- By Default: There will be a List on the left, that includes the most used Unity Types to generate. These are also included by default to use without having to generate them. `Name` will be used as the Class Name, whereas `Type` is how to use the Type in script: `String`vs`string`, `Int`vs`int`, etc. Leaving the `Type` field empty will use the same as `Name`: `GameObject`vs`GameObject`
+- Clicking the **`>`** button on the left, will preview that entry on the right panel.
+- Clicking **`-`** button on the right, will remove an entry.
+- Clicking **`Add`** will create a new empty entry
 - The **Path** is where generated classes will be saved. Use the **Browse** button to select a folder within **Assets/**
 - **Generate** will create 2 scripts in **Path**. One for the **Type** entered, and a specific **List\<T>** type
 
-At the bottom of the Editor Window are 2 preview windows, to check the script file contents before they are generated.
+At the bottom-right of the Editor Window are 2 preview windows, to check the script file contents before they are generated.
 
 ## How to Use
 To create Scriptbale Object Variables, go to:
@@ -45,7 +46,7 @@ GameObject List Variable
 <img src="Documentation~/Screenshots/go-list-var.png" width="300"><br>
 
 ## Todo
-- [ ] Reference Class: Can be used with or without a variable object, to avoid having to create variable objects for everything, while allowing to use them anyway without changing the code
-- [ ] Property Drawers for Scriptable Variables
-- [ ] Better Generator Window
+- [x] Reference Class: Can be used with or without a variable object, to avoid having to create variable objects for everything, while allowing to use them anyway without changing the code
+- [x] Property Drawers for Scriptable Variables
+- [x] Better Generator Window
 - [x] Containers: Group Variables
