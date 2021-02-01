@@ -1,5 +1,9 @@
 # Scriptable Variable Objects
  
+## Installation
+You can install this as a Package through Unity's PackageManager.
+(Optionally) Use my Git Package Updater to install (& update) git packages: https://github.com/Toorah/com.toorah-games.gitupdater
+ 
 ## Generator
 Included comes an Editor Window to quickly generate new *classes* for your own *types*.
 It can be accessed via:
