@@ -22,3 +22,10 @@ At the bottom of the Editor Window are 2 preview windows, to check the script fi
 <img src="Documentation~/Screenshots/float-var.png" width="300"><br>
 <img src="Documentation~/Screenshots/gradient-var.png" width="300"><br>
 <img src="Documentation~/Screenshots/go-list-var.png" width="300"><br>
+
+
+## Todo
+- Reference Class: Can be used with or without a variable object, to avoid having to create variable objects for everything, while allowing to use them anyway without changing the code
+- Property Drawers for Scriptable Variables
+- Better Generator Window
+- Containers: Group Variables
