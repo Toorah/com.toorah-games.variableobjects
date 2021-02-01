@@ -105,6 +105,9 @@ namespace Toorah.ScribtableVariables.Editor
         }
         private void DrawElement(Rect rect, int index, bool isActive, bool isFocused)
         {
+            if (index >= m_variables.arraySize)
+                return;
+
             var element = m_variables.GetArrayElementAtIndex(index);
             var obj = element.objectReferenceValue;
             rect.height = EditorGUIUtility.singleLineHeight;
