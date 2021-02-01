@@ -9,4 +9,8 @@ namespace Toorah.ScriptableVariables
     {
 
     }
+
+    [System.Serializable]
+    public class ColorListReference : VariableReference<List<Color>, ColorListVariable> { }
+    
 }

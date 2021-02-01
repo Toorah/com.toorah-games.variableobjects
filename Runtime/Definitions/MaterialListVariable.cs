@@ -9,4 +9,8 @@ namespace Toorah.ScriptableVariables
     {
 
     }
+
+    [System.Serializable]
+    public class MaterialListReference : VariableReference<List<Material>, MaterialListVariable> { }
+    
 }

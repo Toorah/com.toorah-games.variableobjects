@@ -160,9 +160,19 @@ namespace Toorah.ScribtableVariables.Editor
 
                                 using (new GUILayout.HorizontalScope())
                                 {
+                                    Rect rect = GUILayoutUtility.GetRect(new GUIContent(""), EditorStyles.textField);
 
-                                    cur.name = EditorGUILayout.DelayedTextField(cur.name);
-                                    cur.type = EditorGUILayout.DelayedTextField(cur.type);
+                                    if (rect.Contains(Event.current.mousePosition))
+                                    {
+                                        m_name = cur.name;
+                                        m_type = string.IsNullOrEmpty(cur.type) ? m_name : cur.type;
+                                        GUI.Box(new RectOffset(2, 1, 1, 1).Add(rect), "", EditorStyles.helpBox);
+                                    }
+                                    rect.width *= 0.5f;
+                                    rect.width -= 1;
+                                    cur.name = EditorGUI.DelayedTextField(rect, cur.name);
+                                    rect.x += rect.width+1;
+                                    cur.type = EditorGUI.DelayedTextField(rect,cur.type);
                                     if (GUILayout.Button("-", GUILayout.Width(20)))
                                     {
                                         if (!titleContent.text.EndsWith("*"))
@@ -233,6 +243,10 @@ namespace Toorah.ScribtableVariables.Editor
                         AssetDatabase.SaveAssets();
                         AssetDatabase.Refresh();
                     }
+
+                    variableText = variableTemplateText.Replace("*NAME*", m_name).Replace("*TYPE*", m_type);
+                    listText = listTemplateText.Replace("*NAME*", m_name).Replace("*TYPE*", m_type);
+
 
                     GUILayout.Label("Preview", EditorStyles.miniLabel);
                     saveVariable = EditorGUILayout.Toggle("Save Variable", saveVariable);

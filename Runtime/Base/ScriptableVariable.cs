@@ -45,4 +45,33 @@ namespace Toorah.ScriptableVariables
             m_value = value;
         }
     }
+
+    public abstract class VariableReference<T, V> where V : ScriptableVariable<T> 
+    {
+        [SerializeField] T m_value;
+        [SerializeField] V m_variable;
+
+        public T Value
+        {
+            get
+            {
+                if (m_variable)
+                {
+                    return m_variable.Value;
+                }
+
+                return m_value;
+            }
+            set
+            {
+                if (m_variable)
+                {
+                    m_variable.Value = value;
+                }
+
+                m_value = value;
+            }
+        }
+    }
+
 }

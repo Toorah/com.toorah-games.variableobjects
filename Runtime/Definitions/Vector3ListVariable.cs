@@ -9,4 +9,8 @@ namespace Toorah.ScriptableVariables
     {
 
     }
+
+    [System.Serializable]
+    public class Vector3ListReference : VariableReference<List<Vector3>, Vector3ListVariable> { }
+    
 }

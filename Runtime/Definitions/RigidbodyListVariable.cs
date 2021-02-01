@@ -9,4 +9,8 @@ namespace Toorah.ScriptableVariables
     {
 
     }
+
+    [System.Serializable]
+    public class RigidbodyListReference : VariableReference<List<Rigidbody>, RigidbodyListVariable> { }
+    
 }

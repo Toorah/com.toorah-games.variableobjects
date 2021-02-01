@@ -9,4 +9,8 @@ namespace Toorah.ScriptableVariables
     {
 
     }
+
+    [System.Serializable]
+    public class Texture2DReference : VariableReference<Texture2D, Texture2DVariable> { }
+    
 }

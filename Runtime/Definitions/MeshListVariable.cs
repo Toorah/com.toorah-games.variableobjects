@@ -9,4 +9,8 @@ namespace Toorah.ScriptableVariables
     {
 
     }
+
+    [System.Serializable]
+    public class MeshListReference : VariableReference<List<Mesh>, MeshListVariable> { }
+    
 }

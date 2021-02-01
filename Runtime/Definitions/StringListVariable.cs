@@ -9,4 +9,8 @@ namespace Toorah.ScriptableVariables
     {
 
     }
+
+    [System.Serializable]
+    public class StringListReference : VariableReference<List<string>, StringListVariable> { }
+    
 }
