@@ -9,7 +9,7 @@ Included comes an Editor Window to quickly generate new *classes* for your own *
 It can be accessed via:
 **`Window/Scriptable Variables/Generator`**
 
-<img src="Documentation~/Screenshots/generator.png" width="600">
+<img src="Documentation~/Screenshots/generator.png" width="900">
  
 - To create new *classes* enter a **Name** for the *class* and the **Type**.
 - The **Name** will be used for the class and file name, whereas the **Type** is the actual *C# type*.
