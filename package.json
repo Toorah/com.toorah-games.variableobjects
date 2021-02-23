@@ -5,8 +5,6 @@
     "description": "A Framework for ScriptableObject based Variables.",
     "unity": "2020.2",
     "author": {
-        "name": "Atahan Tugra Kiltan",
-        "email": "",
-        "url": ""
+        "name": "Atahan Tuğra Kiltan"
     }
 }
