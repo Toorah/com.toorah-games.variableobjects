@@ -6,8 +6,4 @@ namespace Toorah.ScriptableVariables
 {
     [CreateAssetMenu(fileName = "*NAME* List Variable", menuName = "Scriptable Variables/List/*NAME*")]
     public class *NAME*ListVariable : ListVariable<*TYPE*> { }
-
-    [System.Serializable]
-    public class *NAME*ListReference : VariableReference<List<*TYPE*, *NAME*ListVariable> { }
-    
 }

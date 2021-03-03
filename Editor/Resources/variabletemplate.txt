@@ -5,9 +5,5 @@ using UnityEngine;
 namespace Toorah.ScriptableVariables
 {
     [CreateAssetMenu(fileName = "*NAME* Variable", menuName = "Scriptable Variables/Single/*NAME*")]
-    public class *NAME*Variable : ScriptableVariable<*TYPE*> { }
-
-    [System.Serializable]
-    public class *NAME*Reference : VariableReference<*TYPE*, *NAME*Variable> { }
-    
+    public class *NAME*Variable : ScriptableVariable<*TYPE*> { }  
 }
