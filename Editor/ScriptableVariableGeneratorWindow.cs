@@ -19,9 +19,17 @@ namespace Toorah.ScribtableVariables.Editor
         public bool saveVariable = true;
         public TextAsset variableTemplate;
         public string variableTemplateText;
+
+        public TextAsset variableTemplate1;
+        public string variableTemplateText1;
+
         public bool saveList = true;
         public TextAsset listTemplate;
         public string listTemplateText;
+
+        public TextAsset listTemplate1;
+        public string listTemplateText1;
+
         public TextAsset generateTypes;
         public string generateTypesText;
 
@@ -59,11 +67,20 @@ namespace Toorah.ScribtableVariables.Editor
         {
             variableTemplate = Resources.Load<TextAsset>("variabletemplate");
             listTemplate = Resources.Load<TextAsset>("listTemplate");
+
+            variableTemplate1 = Resources.Load<TextAsset>("variabletemplate 1");
+            listTemplate1 = Resources.Load<TextAsset>("listTemplate 1");
+
+
             generateTypes = Resources.Load<TextAsset>("generateTypes");
 
 
             variableTemplateText = variableTemplate.text;
             listTemplateText = listTemplate.text;
+
+            variableTemplateText1 = variableTemplate1.text;
+            listTemplateText1 = listTemplate1.text;
+
             generateTypesText = generateTypes.text;
 
             if (generator == null)
@@ -134,7 +151,11 @@ namespace Toorah.ScribtableVariables.Editor
                     GenericMenu menu = new GenericMenu();
                     menu.AddItem(new GUIContent("Default"), false, () => { LoadDefault(); });
                     menu.AddSeparator("");
-                    menu.AddItem(new GUIContent("Load"), false, () => 
+                    menu.AddItem(new GUIContent("New"), false, () =>
+                    {
+                        generator = new Gen();
+                    });
+                    menu.AddItem(new GUIContent("Load"), false, () =>
                     {
                         var path = EditorUtility.OpenFilePanelWithFilters("Open JSON", "", new string[] { "Text Files", "txt,json" });
                         if (!string.IsNullOrEmpty(path))
@@ -226,6 +247,10 @@ namespace Toorah.ScribtableVariables.Editor
                     var listText = listTemplateText.Replace("*NAME*", m_name).Replace("*TYPE*", m_type);
 
 
+                    var variableText1 = variableTemplateText1.Replace("*NAME*", m_name).Replace("*TYPE*", m_type);
+                    var listText1 = listTemplateText1.Replace("*NAME*", m_name).Replace("*TYPE*", m_type);
+
+
                     if (GUILayout.Button("Generate"))
                     {
                         EditorUtility.DisplayProgressBar("Generate Variables", "Start", 0);
@@ -252,8 +277,8 @@ namespace Toorah.ScribtableVariables.Editor
                     }
                     m_type = string.IsNullOrEmpty(m_type) ? m_name : m_type;
 
-                    variableText = variableTemplateText.Replace("*NAME*", m_name).Replace("*TYPE*", m_type);
-                    listText = listTemplateText.Replace("*NAME*", m_name).Replace("*TYPE*", m_type);
+                    variableText1 = variableTemplateText1.Replace("*NAME*", m_name).Replace("*TYPE*", m_type);
+                    listText1 = listTemplateText1.Replace("*NAME*", m_name).Replace("*TYPE*", m_type);
 
                     GUIStyle label = new GUIStyle(EditorStyles.helpBox);
                     label.richText = true;
@@ -261,10 +286,10 @@ namespace Toorah.ScribtableVariables.Editor
                     GUILayout.Label("Preview", EditorStyles.miniLabel);
                     saveVariable = EditorGUILayout.Toggle("Save Variable", saveVariable);
                     if (saveVariable)
-                        GUILayout.Label(variableText, label);
+                        GUILayout.Label(variableText1, label);
                     saveList = EditorGUILayout.Toggle("Save List", saveList);
                     if (saveList)
-                        GUILayout.Label(listText, label);
+                        GUILayout.Label(listText1, label);
 
                 }
             }
