@@ -44,6 +44,8 @@ namespace Toorah.ScriptableVariables
         {
             m_value = value;
         }
+
+        public static implicit operator T(ScriptableVariable<T> var) => var.Value;
     }
 
     public abstract class VariableReference<T, V> where V : ScriptableVariable<T> 
