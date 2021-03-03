@@ -110,6 +110,8 @@ namespace Toorah.ScribtableVariables.Editor
 
             var element = m_variables.GetArrayElementAtIndex(index);
             var obj = element.objectReferenceValue;
+            SerializedObject so = new SerializedObject(obj);
+            var isReadOnly = so.FindProperty("m_isReadOnly");
             rect.height = EditorGUIUtility.singleLineHeight;
             rect.y += 2;
             if(obj != null)
@@ -117,7 +119,7 @@ namespace Toorah.ScribtableVariables.Editor
                 rect.width -= 22;
                 rect.width /= 2f;
                 //EditorGUI.PropertyField(rect, element, new GUIContent(obj.name));
-                EditorGUI.LabelField(rect, $"{obj.name}");
+                EditorGUI.LabelField(rect, $"{obj.name}{(isReadOnly.boolValue ? " (readonly)" : "")}");
                 rect.x += rect.width;
                 EditorGUI.LabelField(rect, $"| {obj.GetType().Name}");
                 rect.x += rect.width+2;

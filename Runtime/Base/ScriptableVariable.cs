@@ -12,6 +12,8 @@ namespace Toorah.ScriptableVariables
         [SerializeField]
         private T m_value;
 
+        [SerializeField] bool m_isReadOnly;
+
         private void OnEnable()
         {
             m_value = m_default;
@@ -27,7 +29,7 @@ namespace Toorah.ScriptableVariables
             get => m_value;
             set
             {
-                if(!m_value.Equals(value))
+                if(!m_value.Equals(value) && !m_isReadOnly)
                 {
                     m_value = value;
                     OnValueChanged.Invoke(m_value);
@@ -42,7 +44,8 @@ namespace Toorah.ScriptableVariables
 
         public void SetWithoutNotify(T value)
         {
-            m_value = value;
+            if(!m_isReadOnly)
+                m_value = value;
         }
 
         public static implicit operator T(ScriptableVariable<T> var) => var.Value;

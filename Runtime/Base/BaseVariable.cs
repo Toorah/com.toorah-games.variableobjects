@@ -6,6 +6,6 @@ namespace Toorah.ScriptableVariables
 {
     public abstract class BaseVariable : ScriptableObject
     {
-        
+
     }
 }
