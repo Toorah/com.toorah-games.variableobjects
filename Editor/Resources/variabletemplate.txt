@@ -8,6 +8,6 @@ namespace Toorah.ScriptableVariables
     public class *NAME*Variable : ScriptableVariable<*TYPE*> { }
 
     [System.Serializable]
-    public class *NAME*Reference : VariableReference<*TYPE*>, *NAME*Variable> { }
+    public class *NAME*Reference : VariableReference<*TYPE*, *NAME*Variable> { }
     
 }

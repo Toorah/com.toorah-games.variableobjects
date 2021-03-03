@@ -8,6 +8,6 @@
     <color=#3498eb>public class</color> <color=#37a67d>*NAME*ListVariable</color> : <color=#37a67d>ListVariable</color><<color=#3498eb>*TYPE*</color>> { }
 
     [System.<color=#37a67d>Serializable</color>]
-    <color=#3498eb>public class</color> <color=#37a67d>*NAME*ListReference</color> : <color=#37a67d>VariableReference</color><<color=#37a67d>List</color><<color=#3498eb>*TYPE*</color>>, <color=#37a67d>*NAME*ListVariable</color>> { }
+    <color=#3498eb>public class</color> <color=#37a67d>*NAME*ListReference</color> : <color=#37a67d>VariableReference</color><<color=#37a67d>List</color><<color=#3498eb>*TYPE*</color>, <color=#37a67d>*NAME*ListVariable</color>> { }
     
 }
